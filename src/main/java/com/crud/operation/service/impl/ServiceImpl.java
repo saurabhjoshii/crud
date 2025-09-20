@@ -4,7 +4,6 @@ import com.crud.operation.entity.UserDetail;
 import com.crud.operation.model.UserDetailModel;
 import com.crud.operation.repository.UserDetailRepository;
 import com.crud.operation.service.IService;
-import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
