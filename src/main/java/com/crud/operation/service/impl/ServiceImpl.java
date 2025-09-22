@@ -28,14 +28,7 @@ public class ServiceImpl implements IService {
     public UserDetailModel updateUser(UserDetailModel userDetailModel, int id) {
         Optional<UserDetail> userDetail = userDetailRepository.findById(id);
         if (!userDetail.isEmpty()) {
-            return buildUserData(saveUserDetail(UserDetail.builder()
-                    .firstName(userDetailModel.getFirstName() != null ? userDetailModel.getFirstName() : userDetail.get().getFirstName())
-                    .lastName(userDetailModel.getLastName() != null ? userDetailModel.getLastName() : userDetail.get().getLastName())
-                    .emailId(userDetailModel.getEmailId() != null ? userDetailModel.getEmailId() : userDetail.get().getEmailId())
-                    .phoneNo(userDetail.get().getPhoneNo())
-                    .age(userDetailModel.getAge() > 0 ? userDetailModel.getAge() : userDetail.get().getAge())
-                    .id(id)
-                    .build()));
+            return buildUserData(saveUserDetail(UserDetail.builder().firstName(userDetailModel.getFirstName() != null ? userDetailModel.getFirstName() : userDetail.get().getFirstName()).lastName(userDetailModel.getLastName() != null ? userDetailModel.getLastName() : userDetail.get().getLastName()).emailId(userDetailModel.getEmailId() != null ? userDetailModel.getEmailId() : userDetail.get().getEmailId()).phoneNo(userDetail.get().getPhoneNo()).age(userDetailModel.getAge() > 0 ? userDetailModel.getAge() : userDetail.get().getAge()).id(id).build()));
         } else {
             return userDetailModel;
         }
