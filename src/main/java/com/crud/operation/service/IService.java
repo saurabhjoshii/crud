@@ -11,5 +11,11 @@ public interface IService {
 
     UserDetailModel updateUser(UserDetailModel userDetailModel, int id);
 
+    UserDetailModel getUserById(int id);
+
+    List<UserDetailModel> getAllUsers();
+
     List<UserDetailModel> getUserData(String firstName, String emailId, String phoneNo);
+
+    void deleteUser(int id);
 }
